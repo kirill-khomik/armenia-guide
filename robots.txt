@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kirill-khomik.github.io/armenia-guide/sitemap.xml
