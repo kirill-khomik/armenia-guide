@@ -108,13 +108,15 @@ a:focus-visible { outline: 2px solid var(--tuff); outline-offset: 3px; }
   position: absolute;
   inset: 0;
   background: url("assets/armenia-hero.jpg") right 52% / auto 130% no-repeat;
+  -webkit-mask-image: linear-gradient(90deg, transparent 55%, rgba(0, 0, 0, 0.5) 66%, #000 76%);
+  mask-image: linear-gradient(90deg, transparent 55%, rgba(0, 0, 0, 0.5) 66%, #000 76%);
   content: "";
 }
 
 .intro::after {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, #22382f 0%, rgba(34, 56, 47, 0.98) 32%, rgba(34, 56, 47, 0.7) 55%, rgba(20, 29, 25, 0.08) 100%);
+  background: linear-gradient(90deg, #22382f 0%, rgba(34, 56, 47, 0.96) 42%, rgba(34, 56, 47, 0.48) 64%, rgba(20, 29, 25, 0.06) 100%);
   content: "";
 }
 
@@ -276,7 +278,7 @@ a:focus-visible { outline: 2px solid var(--tuff); outline-offset: 3px; }
   .top-nav a:first-child,
   .top-nav a:nth-child(2) { display: block; }
   .intro { width: 100%; min-height: 220px; margin-top: 0; border-right: 0; border-left: 0; }
-  .intro::before { background-position: center 52%; background-size: auto 112%; }
+  .intro::before { background-position: center 52%; background-size: auto 112%; -webkit-mask-image: none; mask-image: none; }
   .intro::after { background: linear-gradient(90deg, rgba(22, 35, 29, 0.86) 0%, rgba(22, 35, 29, 0.64) 58%, rgba(22, 35, 29, 0.24) 100%); }
   .intro-copy { grid-template-columns: 1fr; gap: 0.8rem; min-height: 220px; padding: 2rem 1rem; }
   .intro h1 { font-size: 4rem; }
