@@ -151,6 +151,7 @@ a:focus-visible { outline: 2px solid var(--tuff); outline-offset: 3px; }
 .note-section header > span { color: var(--tuff); font-size: 0.62rem; font-weight: 700; }
 .note-section h2 { margin: 0; font-family: var(--serif); font-size: clamp(1.25rem, 1.8vw, 1.65rem); font-weight: 400; letter-spacing: -0.025em; line-height: 1.15; }
 .note-section-wide { grid-column: span 2; }
+.note-section-full { grid-column: 1 / -1; }
 
 .topic-grid,
 .food-columns { display: grid; gap: 1rem; margin-top: 0.9rem; }
@@ -175,6 +176,18 @@ a:focus-visible { outline: 2px solid var(--tuff); outline-offset: 3px; }
 .place-links a:hover { text-decoration: underline; }
 .place-links { display: flex; flex-wrap: wrap; gap: 0.35rem 0.8rem; margin-top: 0.6rem; }
 .delivery { padding: 0.75rem 0 0 1rem; }
+
+.trip-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.65rem; margin-top: 0.9rem; }
+.trip { padding: 0.8rem; background: var(--paper); border: 1px solid var(--line); }
+.trip-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 0.45rem; }
+.trip-heading h3 { margin: 0; font-family: var(--serif); font-size: 1.05rem; font-weight: 400; line-height: 1.25; }
+.trip-heading span { color: var(--tuff); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+.trip p { margin: 0; font-size: 0.76rem; line-height: 1.45; }
+.trip p + p { margin-top: 0.45rem; }
+.tour-note { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 0.65rem; padding: 0.7rem 0.8rem; background: var(--forest); color: white; }
+.tour-note p { margin: 0; font-size: 0.74rem; }
+.tour-note a { flex: 0 0 auto; color: #f0c58e; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.04em; text-decoration: none; text-transform: uppercase; }
+.tour-note a:hover { text-decoration: underline; }
 
 .empty-note {
   display: flex;
@@ -227,7 +240,11 @@ a:focus-visible { outline: 2px solid var(--tuff); outline-offset: 3px; }
   .contents ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .notes-grid { grid-template-columns: 1fr; }
   .note-section-wide { grid-column: span 1; }
+  .note-section-full { grid-column: span 1; }
   .place-list { grid-template-columns: 1fr; }
+  .trip-grid { grid-template-columns: 1fr; }
+  .trip-heading { display: grid; gap: 0.2rem; }
+  .tour-note { align-items: flex-start; flex-direction: column; }
   .note-section { min-height: 150px; }
   .site-footer { padding: 1rem; }
 }
