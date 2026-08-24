@@ -95,23 +95,38 @@ a:focus-visible { outline: 2px solid var(--tuff); outline-offset: 3px; }
 .top-nav a:hover { color: var(--tuff); }
 
 .intro {
+  position: relative;
+  min-height: 280px;
+  overflow: hidden;
+  background: var(--forest) url("assets/armenia-hero.jpg") center 48% / cover no-repeat;
+  border-bottom: 1px solid var(--line);
+}
+
+.intro::before {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(16, 27, 22, 0.84) 0%, rgba(16, 27, 22, 0.58) 52%, rgba(16, 27, 22, 0.18) 100%);
+  content: "";
+}
+
+.intro-copy {
+  position: relative;
+  z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(260px, 34%);
-  gap: clamp(2rem, 6vw, 7rem);
-  align-items: center;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: clamp(2rem, 5vw, 6rem);
+  align-content: center;
+  align-items: end;
+  width: 100%;
   max-width: var(--max);
   min-height: 280px;
   margin: 0 auto;
   padding: 2.5rem 2.25vw;
-  border-bottom: 1px solid var(--line);
+  color: white;
 }
-
-.intro-copy { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: clamp(2rem, 5vw, 6rem); align-items: end; }
-.kicker { grid-column: 1 / -1; margin: 0 0 0.6rem; color: var(--tuff); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.kicker { grid-column: 1 / -1; margin: 0 0 0.6rem; color: #f0c58e; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
 .intro h1 { margin: 0; font-family: var(--serif); font-size: clamp(3.6rem, 7vw, 7rem); font-weight: 400; letter-spacing: -0.055em; line-height: 0.9; }
-.intro-copy > p:last-child { max-width: 430px; margin: 0 0 0.35rem; color: var(--muted); }
-.intro-image { height: 190px; margin: 0; overflow: hidden; background: var(--line); }
-.intro-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 48%; }
+.intro-copy > p:last-child { max-width: 430px; margin: 0 0 0.35rem; color: rgba(255, 255, 255, 0.82); }
 
 .page-layout {
   display: grid;
@@ -250,10 +265,9 @@ a:focus-visible { outline: 2px solid var(--tuff); outline-offset: 3px; }
   .top-nav a { display: none; }
   .top-nav a:first-child,
   .top-nav a:nth-child(2) { display: block; }
-  .intro { grid-template-columns: 1fr; gap: 1.5rem; min-height: auto; padding: 2rem 1rem; }
-  .intro-copy { grid-template-columns: 1fr; gap: 0.8rem; }
+  .intro { min-height: 220px; background-position: 58% 48%; }
+  .intro-copy { grid-template-columns: 1fr; gap: 0.8rem; min-height: 220px; padding: 2rem 1rem; }
   .intro h1 { font-size: 4rem; }
-  .intro-image { height: 150px; }
   .page-layout { grid-template-columns: 1fr; gap: 1.25rem; padding: 1.25rem 1rem 2rem; }
   .contents { position: static; padding: 0 0 1rem; border-right: 0; border-bottom: 1px solid var(--line); }
   .contents ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
