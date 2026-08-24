@@ -96,16 +96,18 @@ a:focus-visible { outline: 2px solid var(--tuff); outline-offset: 3px; }
 
 .intro {
   position: relative;
-  min-height: 280px;
+  width: min(calc(100% - 4.5vw), var(--max));
+  min-height: 320px;
+  margin: 1rem auto 0;
   overflow: hidden;
   background: #22382f;
-  border-bottom: 1px solid var(--line);
+  border: 1px solid var(--line);
 }
 
 .intro::before {
   position: absolute;
   inset: 0;
-  background: url("assets/armenia-hero.jpg") right 52% / auto 145% no-repeat;
+  background: url("assets/armenia-hero.jpg") right 52% / auto 130% no-repeat;
   content: "";
 }
 
@@ -126,7 +128,7 @@ a:focus-visible { outline: 2px solid var(--tuff); outline-offset: 3px; }
   align-items: end;
   width: 100%;
   max-width: var(--max);
-  min-height: 280px;
+  min-height: 320px;
   margin: 0 auto;
   padding: 2.5rem 2.25vw;
   color: white;
@@ -263,6 +265,7 @@ a:focus-visible { outline: 2px solid var(--tuff); outline-offset: 3px; }
   .topic-grid-yerevan .topic + .topic { padding: 0.8rem 0 0; border-top: 1px solid var(--line); border-left: 0; }
   .food-columns { grid-template-columns: 1fr; }
   .food-columns .topic + .topic { padding: 0.8rem 0 0; border-top: 1px solid var(--line); border-left: 0; }
+  .intro { width: calc(100% - 2rem); margin-top: 0.75rem; }
 }
 
 @media (max-width: 700px) {
@@ -272,7 +275,7 @@ a:focus-visible { outline: 2px solid var(--tuff); outline-offset: 3px; }
   .top-nav a { display: none; }
   .top-nav a:first-child,
   .top-nav a:nth-child(2) { display: block; }
-  .intro { min-height: 220px; }
+  .intro { width: 100%; min-height: 220px; margin-top: 0; border-right: 0; border-left: 0; }
   .intro::before { background-position: center 52%; background-size: auto 112%; }
   .intro::after { background: linear-gradient(90deg, rgba(22, 35, 29, 0.86) 0%, rgba(22, 35, 29, 0.64) 58%, rgba(22, 35, 29, 0.24) 100%); }
   .intro-copy { grid-template-columns: 1fr; gap: 0.8rem; min-height: 220px; padding: 2rem 1rem; }
